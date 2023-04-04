@@ -141,7 +141,9 @@ class LoginPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/absense');
+                },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(appOrange),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
