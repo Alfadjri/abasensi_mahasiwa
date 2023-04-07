@@ -1,3 +1,4 @@
+import 'package:absensi_siswa/view/absense/success.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:absensi_siswa/constants/color.dart';
@@ -58,7 +59,12 @@ class _OtpPageState extends State<OtpPage> {
                 ),
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SuccessAbsense()),
+                  );
+                },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(appOrange),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -69,7 +75,10 @@ class _OtpPageState extends State<OtpPage> {
                   padding: MaterialStateProperty.all<EdgeInsets>(
                       EdgeInsets.symmetric(horizontal: 130, vertical: 18)),
                 ),
-                child: Text('ABSEN'),
+                child: Text(
+                  'ABSEN',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
               ),
             ],
           ),
