@@ -1,3 +1,4 @@
+import 'package:absensi_siswa/view/absense/hal_absen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:absensi_siswa/constants/color.dart';
@@ -50,25 +51,27 @@ class Absense extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 13),
-                      child: Card_Jadwal(),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 10),
-                      child: Card_Jadwal(),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 10),
-                      child: Card_Jadwal(),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 10),
-                      child: Card_Jadwal(),
+                    GestureDetector(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Hal_absen()),
+                          );
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 30, vertical: 13),
+                          child: Column(
+                            children: [
+                              Card_Jadwal(),
+                              Card_Jadwal(),
+                              Card_Jadwal(),
+                              Card_Jadwal(),
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),

@@ -3,6 +3,7 @@ import 'package:absensi_siswa/view/absense/absense.dart';
 import 'package:flutter/material.dart';
 import 'package:absensi_siswa/constants/color.dart';
 import 'package:absensi_siswa/components/navbar_bottom.dart';
+import 'package:absensi_siswa/view/absense/hal_absen.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,6 +26,7 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/loginpage',
       routes: {
         '/absense':(context) => Navbar_bottom(),
+        '/hal_absen':(context) => Hal_absen(),
       }
     );
   }
