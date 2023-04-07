@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:absensi_siswa/constants/color.dart';
+import 'package:absensi_siswa/components/card_jadwal.dart';
+import 'package:absensi_siswa/components/navbar_bottom.dart';
 
 class Absense extends StatelessWidget {
   const Absense({super.key});
@@ -20,15 +22,57 @@ class Absense extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 210),
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              // child: Image.asset(
-              //   "images/abs.png",
-              //   fit: BoxFit.cover,
-              // ),
-              decoration: BoxDecoration(
-                  color: app, borderRadius: BorderRadius.circular(40)),
+            child: ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(40),
+                topRight: Radius.circular(40),
+              ),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                // child: Image.asset(
+                //   "images/abs.png",
+                //   fit: BoxFit.cover,
+                // ),
+                decoration: BoxDecoration(color: app),
+                child: ListView(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 30, top: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Jadwal Kelas",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 18),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 13),
+                      child: Card_Jadwal(),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 10),
+                      child: Card_Jadwal(),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 10),
+                      child: Card_Jadwal(),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 10),
+                      child: Card_Jadwal(),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
           Column(
